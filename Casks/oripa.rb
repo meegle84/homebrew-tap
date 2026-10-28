@@ -7,6 +7,12 @@ cask "oripa" do
   desc "Origami crease pattern editor that computes the folded shape"
   homepage "https://github.com/oripa/oripa"
 
+  livecheck do
+    url :url
+    regex(/^v?(\d+(?:\.\d+)+)_release$/i)
+    strategy :github_latest
+  end
+
   depends_on :macos
 
   app "oripa.app", target: "ORIPA.app"

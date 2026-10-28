@@ -7,6 +7,11 @@ cask "oriedita" do
   desc "Origami crease pattern editor and folding simulator (fork of Orihime)"
   homepage "https://oriedita.github.io/"
 
+  livecheck do
+    url :url
+    strategy :github_latest
+  end
+
   depends_on :macos
 
   app "Oriedita.app"
