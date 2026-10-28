@@ -15,11 +15,13 @@ jobs:
   bump:
     runs-on: macos-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       - uses: Homebrew/actions/setup-homebrew@main
 
       - name: Open a pull request for every outdated cask
+        # bash (not the default shell) adds pipefail: a livecheck error fails the run
+        shell: bash
         env:
           HOMEBREW_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           HOMEBREW_NO_AUTO_UPDATE: 1
