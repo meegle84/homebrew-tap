@@ -6,6 +6,7 @@ Personal Homebrew tap with casks for free macOS apps that have no official Homeb
 
 | Cask | App | Upstream |
 |------|-----|----------|
+| `ori-studio` | Origami design and crease pattern validation tool | [zacharyfmarion/ori-studio](https://github.com/zacharyfmarion/ori-studio) |
 | `oriedita` | Origami crease pattern editor and folding simulator (fork of Orihime) | [oriedita/oriedita](https://github.com/oriedita/oriedita) |
 | `oripa` | Origami crease pattern editor that computes the folded shape | [oripa/oripa](https://github.com/oripa/oripa) |
 
