@@ -1,6 +1,6 @@
 # homebrew-tap
 
-Personal Homebrew tap with casks for free macOS apps that have no official Homebrew cask.
+Personal Homebrew tap with casks for free macOS apps that have no official Homebrew cask, and formulae for free data packages that homebrew/core does not ship.
 
 ## Casks
 
@@ -11,11 +11,18 @@ Personal Homebrew tap with casks for free macOS apps that have no official Homeb
 | `origami-diagram-maker` | Step-by-step origami diagrams from crease patterns (freeware for personal use, closed source) | [origamidiagrammaker/origamidiagrammaker.github.io](https://github.com/origamidiagrammaker/origamidiagrammaker.github.io) |
 | `oripa` | Origami crease pattern editor that computes the folded shape | [oripa/oripa](https://github.com/oripa/oripa) |
 
+## Formulae
+
+| Formula | Contents | Upstream |
+|---------|----------|----------|
+| `fortunes-es` | Spanish fortune cookies for `fortune` (Debian's `fortunes-es`, converted to UTF-8; read them with `fortune $(brew --prefix)/share/games/fortunes/es`) | [Debian fortunes-es](https://tracker.debian.org/pkg/fortunes-es) |
+
 ## Usage
 
 ```sh
 brew tap meegle84/tap
 brew install --cask meegle84/tap/oripa
+brew install meegle84/tap/fortunes-es
 ```
 
 ## Updates
