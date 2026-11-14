@@ -27,7 +27,7 @@ brew install meegle84/tap/fortunes-es
 
 ## Updates
 
-Every cask has a `livecheck` block. A weekly GitHub Actions workflow (`.github/workflows/bump-casks.yml`) checks upstream releases and opens one pull request per outdated cask with the new version and checksum; nothing is merged automatically.
+Every cask and formula has a `livecheck` block. A weekly GitHub Actions workflow (`.github/workflows/bump-casks.yml`) checks upstream releases and opens one pull request per outdated cask or formula with the new version and checksum; nothing is merged automatically.
 
 Only free, legitimate apps go in: no paid or commercial software.
 

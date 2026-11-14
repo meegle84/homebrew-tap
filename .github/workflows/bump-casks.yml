@@ -1,7 +1,7 @@
-name: Bump casks
+name: Bump casks and formulae
 
-# Weekly: open one pull request per cask whose upstream has a newer release
-# (detected by each cask's livecheck block). Nothing is merged automatically.
+# Weekly: open one pull request per cask or formula whose upstream has a newer release
+# (detected by its livecheck block). Nothing is merged automatically.
 on:
   schedule:
     - cron: "17 6 * * 1"
@@ -19,7 +19,7 @@ jobs:
 
       - uses: Homebrew/actions/setup-homebrew@main
 
-      - name: Open a pull request for every outdated cask
+      - name: Open a pull request for every outdated cask or formula
         # bash (not the default shell) adds pipefail: a livecheck error fails the run
         shell: bash
         env:
@@ -30,7 +30,7 @@ jobs:
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
           tap="${GITHUB_REPOSITORY_OWNER}/tap"
           brew livecheck --tap "$tap" --newer-only --json --quiet |
-            jq -r '.[] | "\(.cask) \(.version.latest)"' |
-            while read -r cask version; do
-              brew bump-cask-pr --no-fork --no-browse --version "$version" "$tap/$cask"
+            jq -r '.[] | if .cask then "cask \(.cask) \(.version.latest)" else "formula \(.formula) \(.version.latest)" end' |
+            while read -r kind name version; do
+              brew "bump-$kind-pr" --no-fork --no-browse --version "$version" "$tap/$name"
             done
