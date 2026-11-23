@@ -1,9 +1,9 @@
 cask "ori-studio" do
   arch arm: "aarch64", intel: "x64"
 
-  version "0.9.0"
-  sha256 arm:   "22a23e084c50e2e94e7e56931473eac9edcee6409adf24df326443e200a3b638",
-         intel: "d6228e9af5d72fe299abc4240fb95b1c3f11eab9416b28a6acb9746505e85bdc"
+  version "0.10.0"
+  sha256 arm:   "4c42c3c77c4d90605e62f52859e91cd76649f116fee669e7121b4e0dda399f76",
+         intel: "8dd9bd1495d4d72368cd0a3c5248eb23a1f299e17433e83e381e5e5dec048015"
 
   url "https://github.com/zacharyfmarion/ori-studio/releases/download/v#{version}/Ori.Studio_#{version}_#{arch}.dmg"
   name "Ori Studio"
